@@ -8,7 +8,6 @@
  *  gerpSearch.h
  *  Complete gerpSearch Class Header and Declaration
  *  Modified By (UTLN): asahra01
- *           On       : 11/27/17
  *
  */
 
