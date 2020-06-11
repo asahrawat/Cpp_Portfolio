@@ -8,7 +8,6 @@
  *  sorter.cpp
  *  Complete main for program
  *  Modified By (UTLN): asahra01
- *           On       : 10/31/17
  *
  */
 
