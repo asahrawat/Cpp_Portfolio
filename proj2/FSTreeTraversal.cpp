@@ -8,7 +8,6 @@
  *  FSTreeTraversal.cpp
  *  FSTreeTraversal function implementation
  *  Modified By (UTLN): asahra01
- *           On       : 11/15/17
  *
  */
 
