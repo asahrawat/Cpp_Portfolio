@@ -7,7 +7,6 @@
  *  testRPNCalc.cpp
  *
  *  Modified By (UTLN): asahra01
- *           On       : 10/12/17
  *
  */
 
