@@ -8,7 +8,6 @@
  *  testWordTable.cpp
  *  Complete wordTable Class Test
  *  Modified By (UTLN): asahra01
- *           On       : 11/27/17
  */
 
 #include <string>
