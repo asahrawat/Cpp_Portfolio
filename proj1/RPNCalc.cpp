@@ -8,7 +8,6 @@
  *  RPNCalc.cpp
  *  Complete RPNCalc Class Implementation
  *  Modified By (UTLN): asahra01
- *           On       : 10/6/17
  *
  */
 
