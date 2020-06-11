@@ -3,7 +3,6 @@
 // HW6
 // Board Class Header
 
-// Sign off: Professor Strange 4/11/17
 
 
 #include <iostream>
