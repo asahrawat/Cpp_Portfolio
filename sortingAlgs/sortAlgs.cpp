@@ -7,7 +7,6 @@
  *  sortAlgs.cpp
  *  Complete implementation of sorting algorithms
  *  Modified By (UTLN): asahra01
- *           On       : 10/31/17
  *
  */
 
