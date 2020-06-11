@@ -7,7 +7,6 @@
  *  stringProcessing.h
  *  stringProcessing function declaration
  *  Modified By (UTLN): asahra01
- *           On       : 11/15/17
  *
  */
 
