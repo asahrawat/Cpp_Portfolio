@@ -8,7 +8,6 @@
  *  RPNCalc.h
  *  Complete RPNCalc Class Header and Declaration
  *  Modified By (UTLN): asahra01
- *           On       : 10/6/17
  *
  */
 
