@@ -1,6 +1,4 @@
-//
-// Created by Vivek on 10/30/16.
-//
+
 
 #ifndef REFERENCE_DIRNODE_H
 #define REFERENCE_DIRNODE_H
