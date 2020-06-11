@@ -8,7 +8,6 @@
  *  DatumStack.cpp
  *  Complete DatumStack Class Implementation
  *  Modified By (UTLN): asahra01
- *           On       : 10/1/17
  *
  */
 
