@@ -8,7 +8,6 @@
  *  sortAlgs.h
  *  Header for sortAlgs.cpp
  *  Modified By (UTLN): asahra01
- *           On       : 10/31/17
  *
  */
 
