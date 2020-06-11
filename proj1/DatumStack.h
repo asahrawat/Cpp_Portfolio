@@ -8,7 +8,6 @@
  *  DatumStack.h
  *  Complete DatumStack Class Header and Declaration
  *  Modified By (UTLN): asahra01
- *           On       : 10/1/17
  *
  */
 
