@@ -1,0 +1,128 @@
+
+A. Homework Title and Author
+
+	Homework 5: All Sorts of Sorta Nice Sortin' Algorithms
+	Author: Amun Sahrawat
+
+B. The purpose of the program
+	This program was intended to demonstrate how different sorting algorithms
+	were implemented. The purpose of this program was to also consider the
+	time-complexities of each sorting algorithm. This was also the first
+	assignment involving the implemention of STL vectors.
+	
+C. Acknowledgements for help
+	I talked to various TA's during office hours.
+
+D. Files Provided and Description
+
+	The files I provided were sortAlgs.h, sortAlgs.cpp, 
+	sorter.cpp, testSortFiles.cpp, testFileShort.txt. The sortAlgs.h file 
+	is responsible for defining the parameters and definitions of the sorting 
+	functions implemented in the sortAlgs.cpp file. The sortAlgs.cpp file was
+	responsible for the implementation of the sorting functions. The
+	testSortFiles.cpp contains the code that creates three files of numbers
+	from 1 to 100,000 (one ascending, one descending, and one of random numbers
+	allowing for repeats) to be used for testing whether the algorithms would
+	work on a big scale in a timely manner. The testFileShort.txt file was
+	a test file used to test reading in and sorting short lists of numbers.
+
+E. How to compile and run program
+
+	After finishing the make file, I compiled my program using the make command 
+	and ran it using the ./sorter command. To run the sorter in 
+	interactive mode enter two more parameters (sortAlg and outputMode). To 
+	run in automated mode, enter three more parameters (sortAlg, outputMode
+	and fileName). In terms of the sortAlg parameter, -s1 corresponds to
+	insertion sort, -s2 corresponds to quick sort and -s3 corresponds to 
+	shell sort.
+
+F. Outline of Data Structures and Algorithms
+	
+	The main data structure used for this assignment was an STL vector. The use
+	of vectors allowed us to focus more on the sorting algorithms rather than 
+	the current capacity and current of our data structure (i.e. sequences).
+	The use of vectors made the implementation of reading in from a file much 
+	simpler (using the push_back() functionality). The first sorting algorithm 
+	I implmented was the insertion sort. In terms of implementation, I first
+	checked the size of the vector first (size of 0 or 1 would be considered
+	already sorted). Next, I iterated through each element of the vector, 
+	starting with the second element, and comparing the current element to its 
+	preceding element. If the preceding element was greater than the current
+	element I would swap the current element with its preceding element(s)
+	until it was in a position where it was greater than its preceding element
+	or it was in the beginning of the list. Then the iterator (back at the 
+	original position of the current element) was incremented (iterates through
+	the entire list). The best-case time complexity for this algorithm is O(n)
+	because if the vector is already in ascending/sorted order, then the 
+	condition of an element being less than its preceding element will never
+	be satisfied so the run-time will only depend on the size of the vector. 
+	The worst-case time complexity for this algorithm is O(n^2) because if the
+	elements of the vector are originally in reverse/descending order, then for
+	each iteration through the length of the vector, each element will have to
+	be swapped through each of its preceding elements (length of the list that
+	has been traversed so far: n) yielding a time complexity of O(n*n) 
+	= O(n^2). The third algorithm I implemented was the shell sort. I 
+	implemented this sort similar to the insertion algorithm. In this case, 
+	instead of comparing elements right next to each other, numbers separated 
+	by a gap (which started at a size of half of the vector size and halved 
+	after each iteration, finishing at a size of 1) were compared. The current 
+	element was still incremented by one until the end of the vector, but the 
+	element that the current element was compared to (including the reverse 
+	comparisions to find the appropriate placement for an out of place element) 
+	was separated from the current element by the size of the current gap. The
+	best case time complexity for this algorithm would be O(nlog(n)) as the 
+	algorithm would have to iterate through each gap size (half of the length
+	each time so log(n)) and iterate through every element for each gap size
+	(considering the comparisons) which yields a time complexity of O(n*log(n))
+	= O(nlog(n)). Much like in an insertion sort, in the worst-case with a 
+	vector given in descending order, the time complexity would tend towards
+	O(n^2) as the function would have to iterate through every gap size, and
+	through the lenth of the vector, twice over. The second algorithm I
+	implemented was the quick sort algorithm. In this algorithm a pivot value 
+	was chosen as the middle value of the array (makes sorting easier if vector
+	is already sorted as the pivot would then also be the median value).
+	In addition, the left a right boundaries of the partition of the vector
+	being sorted on were declared. In the function, a "low" iterator started at
+	the left boundary and incremented and a "high" iterator started at the 
+	right boundary and decremented. When the low iterator read a value that was
+	greater than the pivot, it stopped. When the right iterator reached a value
+	less than the pivot, then the value that the low iterator was at was
+	swapped with this value. The iterators kept checking values until they
+	passed eachother. At this point, the function would execute a recursive
+	call on both partitions (if applicable) with one partition from the left 
+	boundary to the current high and the other from the current low to the 
+	right boundary (at this point, since the low has passed the high, low is
+	higher than high). This continues until the partitions are reduced to a 
+	size of 1, at which point they are already sorted. The time complexity
+	of this algorithm in the best-case would be O(nlogn) if the prblem
+	gets divided in half each time (ex: the pivot point is the median each 
+	time). In the worst-case, the time complexity would be O(n^2) if the 
+	problem was reduced by only one element after each partitioning. For 
+	example, if the pivot value was the maximum or minimum, then each function
+	call would only simplify the problem by one element.
+
+
+
+
+G. How the Files were Tested
+
+	I started by reading in a few values from cin and printing them directly to
+	cin. Next, I saved the sorted vector, with values from cin, and verified
+	that the file name and output were correct. Next, I tested reading in from
+	a file of a few numbers (testFileShort.txt) and printed the results to cout
+	to verify the results. Then, I tested reading in from a small file and
+	printing the results to another file and, once again, I verified that
+	the filename and the output were correct. Finally, I made the 
+	testSortFiles.cpp file to make 3 different files of 100,000 values from
+	one to 100,000 (one was in ascending order, one was in reverse order and
+	one had random numbers form 1 to 100,000 with repeats allowed) and I
+	performed all of the previous functions on these files. I was also
+	conscious of the time each function was requiring when working with these
+	massive files and made the necessary adjustments.
+
+
+
+
+
+
+
