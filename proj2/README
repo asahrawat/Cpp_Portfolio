@@ -1,0 +1,110 @@
+
+A. Homework Title and Author
+
+	Gerp - It's Like grep But Something Is Off
+	Author: Amun Sahrawat
+
+B. The purpose of the program
+	
+	This program was intended to demonstrate to implementation of an algorithm
+	that can be used to search for any word (both case sensitively and 
+	insensitively) in the files and subdirectories of a given directory.
+
+	
+C. Acknowledgements for help
+
+	I talked to various TA's during office hours. They helped me understand how
+	to expand my hash table and deduce where my memory leaks were.
+
+D. Files Provided and Description
+
+	The new files I provided were wordNode.h, wordTable.h, wordTable.cpp, 
+	gerpSearch.h, gerpSearch.cpp, testWordTable.cpp, testGerpSearch.cpp,
+	commands.txt and main.cpp. The wordNode.h file is responsible for defining
+	the structure for all of the information for a word read in from a file
+	(the hashtable used to index the files consists of wordNode pointers). The
+	wordTable.h file is responsible for defining the attributes of the wordTable
+	class as well as categorizing all of the public and private members of the
+	class. The wordTable.cpp class is responsible for the implementation of all
+	of the members in the wordTable class. The testWordTable.cpp class is
+	responsible for testing all of the member functions as well as normal and 
+	edge cases for the wordTable class. The gerpSearch.h file is responsible for 
+	defining the attributes of the gerpSearch class as well as categorizing all 
+	of the public and private members of the class. The gerpSearch.cpp class is 
+	responsible for the implementation of all of the members in the gerpSearch 
+	class. The testGerpSearch.cpp class is responsible for testing all of the 
+	member functions as well as normal and edge cases for the gerpSearch class.
+
+E. How to compile and run program
+
+	I compiled my program using make. I ran it using ./gerp.
+
+
+F. Architectural Overview
+
+	The wordTable implementation consists of a hash table that contains 
+	pointers to the struct defined by wordNode.h. The wordTable implementation
+	uses the struct defined by wordNode.h to store the information for every
+	word passed to it by gerpSearch. The gerpSearch implementation traverses
+	the file system, passes words an instance of wordTable to store in its 
+	hashTable, processes the user's queries, and uses the hash table created by 
+	wordTable to store the words read in from the files and access those words 
+	when processing a query from the client.
+
+G. Outline of Data Structures and Algorithms
+	
+	In this program, I used the hash table data structure to index keys 
+	generated from the words in each file under a given directory. I used a
+	hash table as this would allow for (nearly) constant time access to any
+	element in the table. My program prompted the user for the name of a 
+	directory in order to begin indexing. My program then created a file system 
+	tree for the given directory and traversed that tree to every subdirectory 
+	and file. For every file under the directory, the path to the file was 
+	stored in an STL vector, the file was opened and the text was read in 
+	line-by-line. The STL vector was used here as it would allow for constant 
+	time access to any element, like an array/sequence, without having to worry 
+	about the number of elements exceeding the capacity of the structure. The 
+	"full line" that was read in was stored into a second STL vector. From 
+	here, a string stream was used to access each individual word in the "full 
+	line". Next, the lower case conversion of the word was created. Finally, 
+	all of the information for the word (original word, converted word, index 
+	for the corresponding path in the path vector, index for the corresponding 
+	full line in the full line vector and the line number) was compressed into 
+	a wordNode. The wordNode was then placed into the hash table created by the 
+	wordTable class by applying the hash function to the lowercase equivalent
+	of the word and placing it in the corresponding compressed index of the
+	hash table. I handled the collisions in the hash table (multiple keys
+	assigning to the same index in the table) with the chaining method by 
+	forming linked lists of wordNodes at each applicable index. After each file 
+	was indexed, the user's query was processed by converting the query to its 
+	lower case equivalent and checking if the original query word matched the
+	original word in the node (when searching case sensitively) or checking if 
+	the converted word matched the lower-case equivalent word stored in the 
+	node (when searching case insensitively).
+
+
+H. How the Files were Tested
+
+	I tested the wordTable class by making a bunch of nodes and trying to
+	insert them into an instance of the wordTable class. I inserted enough 
+	nodes to ensure that the expand function would be called. Then I printed
+	all the information for each node. I then created a directory and a test
+	file and made sure I was reading in the files properly. Here I tested a
+	bunch of edge cases including an empty file, empty directory, attempting
+	to insert the same words from the same line in the table. I then tested
+	my gerpSearch class by reading my cin commands from commands.txt file and
+	comparing the output to the reference ./the_gerp provided. I tested a
+	bunch of edge cases here, again using my test file from the wordTable
+	testing, using the reference ./the_gerp to check my output. Finally, I
+	provided and copied the queries used in provide to further test my program.
+
+
+
+
+
+
+
+
+
+
+
