@@ -1,0 +1,142 @@
+
+A. Homework Title and Author
+
+	Proj 1 CalcYouLater - Reverse Polish Notation Arithmetic
+	Author: Amun Sahrawat
+
+B. The purpose of the program
+	
+	Phase1:
+	This program was intended to demonstrate the implementation of a Stack
+	using a linked list and and a function used to parse the code block Datum
+	type.
+
+	Phase2:
+	This program was intended to demonstrated the implementation of a reverse
+	polish notation calculator on various types of data using a stack.
+	
+C. Acknowledgements for help
+	I talked to various TA's during office hours. They helped me understand how
+	to link the Datum.o file to the rest of my files.
+
+D. Files Provided and Description
+
+	Phase 1:
+	The files I provided were DatumStack.h, DatumStack.cpp, 
+	and parser.cpp. The DatumStack.h file is responsible for defining the 
+	parameters of the DatumStack class as well as categorizing all of the 
+	public and private members of the class. The DatumStack.cpp file is 
+	responsible for the implementation of all of the members in the 
+	DatumStack class. The parser.cpp file contains the parseCodeBlock function
+	which parses the code block Datum type and parses it.
+
+	Phase2:
+	In addition to the files I provided from phase 1, I also provided 
+	RPNCalc.cpp, testDatumStack.cpp, RPNCalc.h, testRPNCalc.cpp, main.cpp, 
+	testInput.txt, testInput2.txt, and testInput3.txt and Makefile. The 
+	RPNCalc.h file is responsible for defining the parameters of the RPNCalc 
+	class as well as categorizing all of the public and private members of the 
+	class. The RPNCalc.cpp file is responsible for the implementation of all of 
+	the members in the RPNCalc class. The testDatumStack.cpp tests normal and 
+	edge cases for the Datum Stack class. The main.cpp is the main used to run 
+	the RPNCalc implementation. The input testing text files test the ability 
+	of RPNCalc to read in from a files and nested files. The Makefile file 
+	links the entire program together.
+
+E. How to compile and run program
+
+	Phase 1:
+	I compiled my program using the command: 
+	clang++ -Wall -Wextra DatumStack.cpp Datum.o
+	I also included my test file for the DatumStack class in the previous
+	command during the testing phase ('main' contained in test file).
+	I ran my program using the ./a.out command. I compiled my parser.cpp 
+	program with the command: clang++ -Wall -Wextra parser.cpp and also ran it
+	using the ./a.out command (no 'main' included in submitted version of
+	parser.cpp)
+
+	Phase 2:
+	I compiled my program using make. I ran it using ./CalcYouLater
+
+F. Outline of Data Structures and Algorithms
+	
+	Phase 1:
+	The main data structure used for this assignment was a stack. I used a
+	linked list to model the stack for this assignment. Since I would mostly
+	need to access the first element of the stack (push and pop functions),
+	this implementation made the most sense to me (front pointer in linked
+	list). In each of the node of the linked list, the data on the Datum was
+	stored as pointer pointing to the Datum value to sort out the discrepancies
+	over which constructor would need to be called for which Datum type. In
+	this way, each Datum could be accessed through its pointer and only the
+	pointer was stored in the linked list. For the parseCodeBlock, I counted 
+	the number of open ({) and closed (}) braces to check when each code block
+	was over because the only time when the number of open and closed braces
+	were equal (besides at the beginning with none of each) was when the code 
+	block was ending.
+
+	Phase 2:
+	In Phase 2, the only real algorithm I used was that I made my input 
+	processing modular. Since the cin, files, and strings can all be read-in 
+	from using an istream, I was able to write a single function that could 
+	take in any istream and process the input being read in. There were no new 
+	data structures used in this phase as the stack implemented in the last 
+	phase was simply used by the RPNCalc. Another exammple where a stack could 
+	be used in real life (adding on from the phase 1 examples) is the undo
+	function on a computer. You could push all changes made in a certain 
+	amount of time onto a stack and restore and pop them when the user presses
+	the undo command.
+
+
+
+
+G. How the Files were Tested
+
+Phase 1:
+
+I created a print function and used it to check the state of each stack I made 
+at any tiem. I tested the DatumStack class by first calling both constructors. 
+I pushed the elements that were in the stack created by the parametrized 
+constructor (stack1) onto the stack created by the default constructor (stack2) 
+and verified that they produced the same result. Next, I called the top 
+function on each stack and verified that the first element in the stack was 
+returned. I then tested the size function on each stack and made sure that it 
+returned the correct length. Then I popped each element from stack and made 
+sure that each element was popping in the correct order. When all elements of 
+stack1 had been popped, I ran isEmpty on the stack and made sure that it 
+returned true. On stack 2, I ran the clear function, made sure it was empty (
+printed nothing), then called isEmpty on the stack to make sure it also 
+returned true. For the parsCode Block function, I tested my function by trying 
+to read from both cin and a file. I then tested on nested codeblocks and empty 
+codeblocks (edge cases).
+
+
+Phase 2:
+
+I tested the files in Phase 2 largely the same way that I did in Phase 1. I
+would push various Datum onto the stack and print them out to see if they were
+in the correct order. I also tried to enter random combinations of keys to make
+sure that the program would not accept the values and display an appropriate 
+error message. In this phase, however, I tested operations to be performed on 
+the data that was on the stack. I first tested all of the elementary 
+operations (+ - * / mod) and verified they pushed the correct values on top of 
+the stack. Next, I checked the comparison functions (>, <, <=, >=, ==) and 
+verified their outputs. Then I moved on to implementing code blocks. I used my 
+code block parser from phase 1 and verified that code blocks were pushed onto 
+the stack correctly. I then tested the execution of the codeblocks normally, 
+nested, and empty. Next, I tested the if command with normal, nested, and 
+empty codeblocks. Finally, I went back through my code (referring to the 
+reference calculator) and made sure that I was catching/preventing all of the 
+errors that my other classes were throwing. The reference calculator was 
+instrumental in testing my RPNCalc as it allowed me to verify my results 
+against another source.
+
+
+
+
+
+
+
+
+
+
