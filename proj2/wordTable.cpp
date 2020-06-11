@@ -8,7 +8,6 @@
  *  wordTable.cpp
  *  Complete wordTable Class Implementation
  *  Modified By (UTLN): asahra01
- *           On       : 11/27/17
  *
  */
 
