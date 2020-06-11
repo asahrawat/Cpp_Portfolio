@@ -10,7 +10,6 @@
  *
  *  Written by: Amun Sahrawat
  *        UTLN: asahra01
- *          on: 10/1/17
  */
 
 #include <iostream>
