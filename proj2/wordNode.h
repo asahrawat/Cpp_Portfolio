@@ -8,7 +8,6 @@
  *  wordNode.h
  *  Complete wordNode struct definition
  *  Modified By (UTLN): asahra01
- *           On       : 11/27/17
  *
  */
 
