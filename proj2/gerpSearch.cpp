@@ -8,7 +8,6 @@
  *  gerpSearch.cpp
  *  Complete gerpSearch Class Implementation
  *  Modified By (UTLN): asahra01
- *           On       : 11/27/17
  *
  */
 
